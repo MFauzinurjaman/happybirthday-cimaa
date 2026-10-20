@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Cimaa 💗</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;font-family:'Trebuchet MS',sans-serif;
+ background:linear-gradient(135deg,#fff0f6,#ffd6e7,#fff8fc);
+ color:#873b60;min-height:100vh;overflow-x:hidden
+}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:760px;margin:auto;padding:18px}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.brand{font-weight:bold;color:#d63384}
+button{
+ border:0;border-radius:30px;padding:12px 20px;
+ background:linear-gradient(135deg,#ff9ec5,#ed4b96);
+ color:white;font-weight:bold;box-shadow:0 5px 15px #ed4b9633
+}
+button:active{transform:scale(.96)}
+.music{background:white;color:#d63384;border:1px solid #ffc0d9}
+.progress{height:6px;background:#ffc6df;border-radius:20px;margin:20px 0;overflow:hidden}
+#bar{height:100%;width:0;background:#e84393;transition:.4s}
+.card{
+ min-height:580px;background:#ffffffdb;border:2px solid white;
+ border-radius:28px;padding:25px 20px;box-shadow:0 15px 50px #c64b8520;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ text-align:center;position:relative;overflow:hidden
+}
+.card:before,.card:after{content:"♡";position:absolute;color:#ffc0d9;font-size:65px;opacity:.65}
+.card:before{top:5px;left:15px}.card:after{bottom:5px;right:15px}
+.small{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#c34d84;font-weight:bold}
+h1{font-size:clamp(40px,9vw,65px);line-height:1.08;color:#df438b;margin:20px 0}
+h2{font-size:clamp(27px,6vw,40px);color:#df438b;margin:12px 0}
+p{font-size:16px;line-height:1.9;max-width:540px}
+.heart{font-size:65px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.script{font-family:"Brush Script MT",cursive;font-size:30px;color:#e84393;margin:15px}
+.nav{display:flex;justify-content:center;gap:12px;margin-top:18px;flex-wrap:wrap}
+.secondary{background:white;color:#d63384;border:1px solid #ffc0d9;box-shadow:none}
+.dots{display:flex;justify-content:center;gap:7px;margin-top:18px}
+.dot{height:8px;width:8px;background:#f4b2ce;border-radius:10px}
+.dot.active{width:24px;background:#e84393}
+.envelope{
+ width:190px;height:135px;background:#ff8fba;position:relative;
+ margin:30px auto;cursor:pointer;border-radius:8px;
+ display:flex;align-items:center;justify-content:center;
+ box-shadow:0 10px 25px #d84d8d35
+}
+.envelope:before{
+ content:"";position:absolute;top:0;left:0;width:0;height:0;
+ border-left:95px solid transparent;border-right:95px solid transparent;
+ border-top:75px solid #ffc2da;z-index:2
+}
+.envelope span{font-size:45px;z-index:3;margin-top:35px}
+.envelope:hover{transform:translateY(-5px)}
+
+/* === BINGKAI VIDEO POTRET (SLIDE 3) === */
+.photo{
+ width: min(100%, 220px);
+ height: 320px;
+ border: 9px solid white;
+ box-shadow: 0 8px 25px #b44b7b30;
+ transform: rotate(-2deg);
+ margin: 20px auto;
+ background: #ffe0ed;
+ overflow: hidden;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 12px;
+}
+.photo video, .photo img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+/* === BINGKAI GALERI FOTO POTRET PANJANG KEBAWAH (SLIDE 4) === */
+.photo-grid {
+ display:grid;
+ grid-template-columns:repeat(2, 1fr);
+ gap:14px;
+ width:100%;
+ margin-top:10px;
+ max-height:420px;
+ overflow-y:auto;
+ padding:8px;
+}
+.photo-card {
+ background:#ffffff;
+ padding:8px 8px 10px 8px;
+ border-radius:14px;
+ box-shadow:0 6px 18px rgba(232, 67, 147, 0.18);
+ border:1px solid #ffe3ee;
+ text-align:center;
+ transition:transform 0.2s ease;
+}
+.photo-card:hover {
+ transform:translateY(-3px) rotate(1deg);
+}
+.photo-frame {
+ width:100%;
+ height:240px; /* Diperpanjang tinggi bingkainya ke bawah */
+ border-radius:8px;
+ overflow:hidden;
+ background-color:#fff0f3;
+}
+.photo-frame img {
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+.photo-caption {
+ font-size:12px;
+ color:#d63384;
+ margin-top:8px;
+ font-weight:bold;
+}
+
+.letter{background:#fff9fc;border:1px dashed #e994b8;border-radius:18px;padding:22px;text-align:left;line-height:1.9;white-space:pre-line}
+.secret{display:none;background:#fff0f7;border:1px solid #ffb8d5;border-radius:20px;padding:20px;line-height:1.9;margin-top:18px}
+.secret.show{display:block;animation:appear .7s}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+footer{text-align:center;font-size:12px;margin:20px;color:#b5688c}
+.floating{position:fixed;bottom:-30px;pointer-events:none;animation:float 8s linear forwards;z-index:10}
+@keyframes float{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.confetti{position:fixed;top:-20px;width:9px;height:14px;z-index:20;pointer-events:none;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:500px){
+ .wrap{padding:12px}.card{min-height:560px;padding:25px 15px}
+ .brand{font-size:14px}
+ .music{padding:10px;font-size:12px}
+ .photo-frame{height:190px;} /* Untuk tampilan HP */
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+<header>
+ <div class="brand">♡ SURAT KECIL UNTUK CIMAA</div>
+ <button class="music" id="musicBtn">♫ Putar Musik</button>
+</header>
+
+<div class="progress"><div id="bar"></div></div>
+<main class="card" id="card"></main>
+<div class="dots" id="dots"></div>
+
+<div class="nav">
+ <button class="secondary" id="prev">← Kembali</button>
+ <button id="next">Selanjutnya →</button>
+</div>
+<footer>Dibuat dengan cinta, khusus untuk Cimaa 💗</footer>
+</div>
+
+<audio id="music" loop>
+  <source src="selamat-ulangtahun-jamrud.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const slides = [
+{
+ type:"cover",
+ small:"Cima's day",
+ title:"Happy Birthday,<br>Cimaa! 💗",
+ body:"Untuk sayangku cintaku, jgn lupa sblum lanjut klik puter musik dlu di kanan atas yah",
+ button:"Buka sayang 💌"
+},
+{
+ small:"BUAT KAMU SAYANG",
+ title:"Selamat Ulang Tahun, Sayangku! 🎂",
+ body:"Hari ini adalah hari spesial karena seseorang yang sangat berarti buat aku bertambah usia. Semoga hari ini dan seterusnya slalu bahagia sayangku"
+},
+{
+ type:"photo",
+ small:"our memories", 
+ title:"📸",
+ body:"Makasii buat smuanya sayang, aku baru nemuin cewe skuat kmu dari segi hal apapun",
+ caption:"♡"
+},
+{
+ type:"gallery",
+ small:"our memories",
+ title:"Momen Spesial Kita 💖",
+ body:"✨",
+ items:[
+  { img: "poto-kita.jpeg", caption: "Momen 1 💕" },
+  { img: "poto-kita1.jpeg", caption: "Momen 2 ✨" },
+  { img: "poto-kita2.jpeg", caption: "Momen 3 🌸" },
+  { img: "poto-kita3.jpeg", caption: "Momen 4 🌷" }
+ ]
+},
+{
+ small:"DOA DARI AKU UNTUK KAMU",
+ title:"Semoga Kamu Selalu Bahagia ✨",
+ body:"Semoga kamu selalu sehat, panjang umur, dimudahkan semua urusannya, dilancarkan rezekinya, dan bisa meraih semua impian kamu. Kalau ada hari yang berat, semoga kamu selalu punya alasan untuk bertahan dan tersenyum lagi. Jangan lupa bahagia, ya,sayangku cintaku."
+},
+{
+ type:"letter",
+ small:"BACA PELAN-PELAN YA, SAYANG",
+ title:"Surat Kecil Buat Kamu 💌",
+ body:`Sayangku Cimaa,
+
+Makasih ya sudah hadir di hidup aku. Makasih buat setiap tawa, cerita, perhatian, dan momen sederhana yang jadi berharga karena kamu.
+
+Aku tahu aku bnyk bngt salah. Masih ada sikap aku yang bikin kamu kesal, masih bnyk kata-kata aku yg gaenak, dan masih banyak hal yang harus aku pelajari dari kesalahan aku yg sblum2nya bub.
+
+Tapi satu hal yang pengin kamu tahu: aku mau terus belajar jadi pasangan yang lebih baik buat kamu. Aku mau kita sama-sama trus yah bub,
+
+Kalau kamu capek, istirahat ya bub, slalu cerita sama aku. Kamu nggak harus selalu terlihat kuat bub.
+
+Selamat ulang tahun, sayangku cintaku. Semoga dunia selalu punya cara untuk membahagiakan kamu, sebagaimana kamu sudah membawa kebahagiaan buat aku.
+
+Aku sayang kamu, Cimaa. Hari ini, esok, dan semoga di banyak hari setelahnya. 💗`
+},
+{
+ type:"secret",
+ small:"EITS, JANGAN SELESAI DULU!",
+ title:"Ada Kejutan Lagi 🎁",
+ body:"Aku menyimpan satu pesan terakhir buat kamu. Coba klik tombol di bawah ini, sayang!",
+ button:"BUKA KEJUTAN RAHASIA 💗",
+ secret:"CIMAAAAA, HAPPY BIRTHDAYYYY! 🥹💗<br><br>Kalau kamu sampai di sini, berarti kamu sudah membaca hadiah kecil dari aku. Mungkin ini bukan hadiah paling mahal, tapi aku membuatnya khusus buat kamu dengan harapan kamu bisa tersenyum.<br><br>Makasii bub udh jadi bagian dari cerita hidup aku. Semoga semua hal baik slalu menyertaimu sayang.<br><br><b>AKU SAYANG BANGET SAMA KAMU, SAYANGKU CINTAKU! 💗</b><br><br>Jangan lupa senyum hari ini, karena hari ini adalah hari lahirnya perempuan spesial yang aku sayang.😚💋"
+},
+{
+ type:"end",
+ small:"DARI AKU, UNTUK KAMU",
+ title:"I LOVE YOU MORE, CIMAA 💖",
+ body:"Selamat ulang tahun, sayangku cintaku. Semoga semua doa baik memeluk kamu satu per satu. Terima kasih sudah hadir dan menjadi bagian indah dalam hidup aku.",
+ button:"Ulangi dari awal ↺"
+}
+];
+
+let current=0;
+const card=document.getElementById("card");
+const bar=document.getElementById("bar");
+const dots=document.getElementById("dots");
+
+function render(){
+ const s=slides[current];
+ let html=`<div class="small">${s.small}</div>`;
+
+ if(s.type==="cover"){
+  html+=`<div class="envelope" onclick="nextSlide()"><span>💌</span></div>
+  <h1>${s.title}</h1><p>${s.body}</p>
+  <button onclick="nextSlide()">${s.button}</button>`;
+ }
+ else if(s.type==="photo"){
+  html+=`<h2>${s.title}</h2>
+  <div class="photo">
+    <video src="vidio-kita.mp4" autoplay loop muted playsinline></video>
+  </div>
+  <p>${s.body}</p><i>${s.caption}</i>`;
+ }
+ else if(s.type==="gallery"){
+  html+=`<h2>${s.title}</h2><p>${s.body}</p><div class="photo-grid">`;
+  s.items.forEach(item => {
+    html += `
+      <div class="photo-card">
+        <div class="photo-frame">
+          <img src="${item.img}" alt="Foto Cimaa">
+        </div>
+        ${item.caption ? `<div class="photo-caption">${item.caption}</div>` : ''}
+      </div>`;
+  });
+  html+=`</div>`;
+ }
+ else if(s.type==="letter"){
+  html+=`<h2>${s.title}</h2><div class="letter">${s.body}</div>`;
+ }
+ else if(s.type==="secret"){
+  html+=`<div class="heart">🎀</div><h2>${s.title}</h2><p>${s.body}</p>
+  <button id="secretBtn">${s.button}</button>
+  <div id="secretText" class="secret">${s.secret}</div>`;
+ }
+ else if(s.type==="end"){
+  html+=`<div class="heart">💖</div><h1>${s.title}</h1><p>${s.body}</p>
+  <button onclick="restart()">${s.button}</button><div class="script">Peluk jauh untuk Cimaa ♡</div>`;
+ }
+ else{
+  html+=`<div class="heart">🌸</div><h2>${s.title}</h2><p>${s.body}</p>
+  <div class="script">Aku sayang kamu ♡</div>`;
+ }
+
+ card.innerHTML=html;
+ bar.style.width=((current+1)/slides.length*100)+"%";
+ dots.innerHTML=slides.map((_,i)=>`<span class="dot ${i===current?"active":""}"></span>`).join("");
+ document.getElementById("prev").style.visibility=current===0?"hidden":"visible";
+ document.getElementById("next").style.visibility=current===slides.length-1?"hidden":"visible";
+
+ const secretBtn=document.getElementById("secretBtn");
+ if(secretBtn){
+  secretBtn.onclick=()=>{
+   document.getElementById("secretText").classList.add("show");
+   secretBtn.textContent="YEAY, KEJUTANNYA TERBUKA 💕";
+   secretBtn.disabled=true;
+   confetti();
+  };
+ }
+ if(s.type==="end")confetti();
+}
+
+function nextSlide(){
+ if(current<slides.length-1){current++;render();window.scrollTo({top:0,behavior:"smooth"});}
+}
+function prevSlide(){
+ if(current>0){current--;render();window.scrollTo({top:0,behavior:"smooth"});}
+}
+function restart(){current=0;render();window.scrollTo({top:0,behavior:"smooth"});}
+document.getElementById("next").onclick=nextSlide;
+document.getElementById("prev").onclick=prevSlide;
+
+document.addEventListener("keydown",e=>{
+ if(e.key==="ArrowRight")nextSlide();
+ if(e.key==="ArrowLeft")prevSlide();
+});
+
+function confetti(){
+ for(let i=0;i<70;i++){
+  let c=document.createElement("div");
+  c.className="confetti";
+  c.style.left=Math.random()*100+"vw";
+  c.style.background=["#ff6fae","#ffc1d9","#fff","#e84393"][Math.floor(Math.random()*4)];
+  c.style.animationDelay=Math.random()+"s";
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),4000);
+ }
+}
+setInterval(()=>{
+ const h=document.createElement("div");
+ h.className="floating";
+ h.textContent=["💗","💕","♡","🌸"][Math.floor(Math.random()*4)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(15+Math.random()*22)+"px";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),8000);
+},700);
+
+const music=document.getElementById("music");
+const musicBtn=document.getElementById("musicBtn");
+let playing=false;
+musicBtn.onclick=async()=>{
+ if(!music.querySelector("source")){
+  alert("Musik belum ditambahkan. Ikuti petunjuk di bawah kode untuk memasukkan musik.mp3.");
+  return;
+ }
+ try{
+  if(!playing){await music.play();playing=true;musicBtn.textContent="Ⅱ Jeda Musik";}
+  else{music.pause();playing=false;musicBtn.textContent="♫ Putar Musik";}
+ }catch(e){alert("Musik belum bisa diputar. Coba tekan lagi.");}
+};
+render();
+</script>
+</body>
+</html>
